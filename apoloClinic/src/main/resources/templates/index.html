@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.springframework.org/extras/spring-security">
+<head>
+	<meta charset="utf-8">
+	<head th:include="plantillas/multiTemplate :: head">
+	</head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/indexStyle.css}">
+</head>
+<body>
+	<div style="background-color: #150485;">
+		<header th:replace="plantillas/multiTemplate :: hrz-header">
+		</header>
+	</div>
+	<header th:replace="plantillas/multiTemplate :: lateral-menu">
+	</header>
+	<div class="content">
+		<div class="titulos">
+			<div class="infTitle">
+				<div class="titles">
+					<h2><b style="color: red">A</b>POLO <b style="color: green">C</b>LINIC</h2>
+					<h1>Clinica web a tu servicio</h1>
+				</div>
+				<div class="titleInf">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum 
+						<a href="#">enlace</a>.
+					</p>
+				</div>
+			</div>
+			<div class="titleLogo">
+				<img src="img/logo.png">
+			</div>
+		</div>
+		<div class="regisInvit">
+			<img class="img" src="img/regInvit.png">
+			<a href="/registro"class="linknt btn regist"><img src="img/carne-de-identidad.png">Registrarse</a>
+			<p>
+				<b>Regístrese</b><br>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.
+			</p>
+		</div>
+		<div class="acCompromise">
+			<div class="valores">
+				<h4>Nos caracterizamos por</h4>
+				<span href="">Confianza</span>
+				<span href="">Profesionalidad</span>
+				<span href="">Experiencia</span>
+			</div>
+		</div>
+	</div>
+	<div class="contacto"></div>
+	<footer>
+		<span>Developed by P-IV</span>
+	</footer>
+</body>
+</html>

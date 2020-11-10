@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.springframework.org/extras/spring-security">
+<head>
+	<meta charset="utf-8">
+	<head th:include="plantillas/multiTemplate :: head">
+	</head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/loginStyle.css}">
+</head>
+<body>
+	<div style="background-color: #150485;">
+		<header th:replace="plantillas/multiTemplate :: hrz-header">
+		</header>
+	</div>
+	<header th:replace="plantillas/multiTemplate :: lateral-menu">
+	</header>
+	<div class="content">
+		<div class="wrapContent">
+			<div class="divContainer">
+				<div class="lateral">
+					<div class="contenidoAC">
+						<img src="img/logo.png">
+						<div class="nameWeb">
+							<span>&#x1D116;&#x1D116;&#x1D116;&#x1D116;&#x1D116;&#x1D116;&#x1D116;</span>
+							<h2><b style="color: red">A</b>POLO <b style="color: green">C</b>LINIC</h2>
+							<span>&#x1D116;&#x1D116;&#x1D116;&#x1D116;&#x1D116;&#x1D116;&#x1D116;</span>
+						</div>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+						</p>
+						<div class="moreLg">
+							<span>Ó inicia sesión con:</span>
+							<div class="other">
+								<a href=""><i class="fab fa-facebook-square"></i></a>
+								<a href=""><i class="fab fa-twitter-square"></i></a>
+								<a href=""><i class="fab fa-google-plus-square"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="lateral">
+					<div class="loginBox">
+						<form class="loginFrm" th:action="@{/login}" method="post">
+							<h2>Iniciar Sesión</h2>
+							<div class="infologin">
+								<p class="msg fail" th:if="${error}" th:text="${error}"></p>
+								<p class="msg success" th:if="${logout}" th:text="${logout}"></p>
+							</div>
+							<div class="controls">
+                        		<label for="username" class="textControl">Username:</label><br>
+                       			<input type="text" name="username" id="username" class="control" placeholder="Escriba aquí su nombre de usuario...">
+                        		<label for="password" class="textControl">Password:</label><br>
+                        		<input type="password" name="password" id="password" class="control" placeholder="Ingrese aquí su contraseña...">
+							</div>
+                    		<div class="opciones">
+                    			<input type="submit" name="submit" class="btn logBtn" value="Iniciar Sesión">
+							</div>
+							<div class="opcionReg">
+								<span>¿Aún no está registrado?</span>
+								<a href="">Regístrese aquí</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

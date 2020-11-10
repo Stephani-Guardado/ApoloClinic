@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.springframework.org/extras/spring-security">
+<head>
+	<meta charset="utf-8">
+	<head th:include="plantillas/multiTemplate :: head">
+	</head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/registroPctStyle.css}">
+</head>
+<body>
+	<div style="background-color: #150485;">
+		<header th:replace="plantillas/multiTemplate :: hrz-header">
+		</header>
+	</div>
+	<header th:replace="plantillas/multiTemplate :: lateral-menu">
+	</header>
+	<div class="content">
+		<div class="registrarP">
+			<div class="beneficios">
+				<span>¡Registrate!</span>
+				<hr>
+				<p>
+					Si te registras obtendras muchos beneficios dentro de Apolo Clinic. Entre estos beneficios podrás obtener un control detallado de tus registros medicos, contarás con la opción de agendar citas medicas, consultorios con doctores y enfermeras de nuestro personal.
+				</p>
+				<span>¡No esperes mas!</span>
+				<img src="img/regPacient.png">
+			</div>
+			<form class="regPacient" th:action="@{/save-paciente}" method="post" th:fragment="form-reg-pct">
+				<h6><i class="fas fa-user-edit"></i> Información personal: </h6>
+				<label>Nombres: </label>
+				<input type="text" class="control" name="nombres" placeholder="Escriba aqui ambos nombres...">
+				<label>Apellidos: </label>
+				<input type="text" class="control" name="apellidos" placeholder="Escriba aqui ambos apellidos...">
+				<label>Dirección Actual: </label>
+				<input type="text" class="control" name="direccion_actual" placeholder="Escriba la dirección residencial actual...">
+				<label>Telefono: </label>
+				<input type="text" class="control" name="telefono" placeholder="Telefono...">
+				<label>Sexo: </label>
+				<select name="sexo" class="control">
+					<option value="Hombre">Hombre</option>
+					<option value="Mujer">Mujer</option>
+				</select>
+				<label>Fecha de nacimiento: </label>
+				<input type="text" class="control" name="fecha_nacimiento" placeholder="Defina la fecha de su nacimiento">
+				<label>Lugar de nacimiento: </label>
+				<input type="text" class="control" name="direccion_nacimiento" placeholder="Escriba su lugar de nacimiento">
+
+				<input type="hidden" class="control" value="0" name="cedula">
+				<input type="hidden" class="control" name="especialidad">
+
+				<h6><i class="fas fa-user-lock"></i> Para iniciar sesión:</h6>
+				<label>Nombre de Usuario: </label>
+				<input type="text" class="control" name="username" placeholder="Nombre de usuario a utilizar en esta pagina web...">
+				<label>Contraseña: </label>
+				<input type="password" class="control" name="passw" placeholder="Defina su contraseña...">
+				<label>Confirme su contraseña: </label>
+				<input type="password" class="control" placeholder="Reescriba su contraseña...">
+				<div>
+					<input type="submit"class="btnRegPacient" value="Registrarse">
+					<input type="reset"class="btnRegPacient cancel" id="btnCancel" value="Cancelar">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

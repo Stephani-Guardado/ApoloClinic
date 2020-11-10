@@ -1,0 +1,183 @@
+.content{
+	background-image: url("../img/flat-layMed.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+
+.divContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+	margin: 50px 0;
+}
+
+.divContainer .lateral{
+	width: 50%;
+	height: 500px;
+	background-color: #FFF;
+}
+
+.contenidoAC{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	color: #FFF;
+	background-image: url("../img/fondo_official.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+
+.contenidoAC img{
+	width: 170px;
+}
+
+.contenidoAC .nameWeb{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.contenidoAC .nameWeb h2{
+	font-size: 24px;
+	letter-spacing: 4px;
+	margin: 10px 10px;
+}
+
+.contenidoAC p{
+	font-size: 14px;
+	width: 80%;
+}
+
+.contenidoAC .moreLg{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+	margin-top: 60px;
+}
+
+.contenidoAC .moreLg .other{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 60%;
+	margin-top: 10px;
+}
+
+.contenidoAC .moreLg .other a{
+	text-decoration: none;
+	font-size: 40px;
+	color: #FFF;
+	transition: all 200ms;
+}
+
+.contenidoAC .moreLg .other a:hover{
+	transform: scale(1.1);
+	transition: all 200ms;
+}
+
+.loginBox{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.loginBox form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.loginBox .loginFrm .infologin{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+}
+
+.loginBox .loginFrm .infologin .msg{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 80%;
+	height: 60px;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 10px 0;
+	color: #FFF;
+}
+
+.fail{
+	border: 1px solid #e97171;
+	background-color: #e97171;
+}
+
+.success{
+	border: 1px solid #50d890;
+	background-color: #50d890;
+}
+
+
+.loginBox .loginFrm .controls{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	margin: 20px 0;
+}
+
+.loginBox .loginFrm .controls .textControl{
+	width: 70%;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+.loginBox .loginFrm .controls .control{
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 5px;
+	width: 85%;
+	font-size: 16px;
+}
+
+.loginBox .loginFrm .controls .text-control{
+	width: 70%;
+	text-align: left;
+	margin-top: 10px;
+}
+
+.loginBox .loginFrm .opciones{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	margin-bottom: 10px;
+}
+
+.logBtn{
+	border: 2px solid #150485;
+	color: #FFF;
+	background-color: #150485;
+}

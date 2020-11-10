@@ -1,0 +1,120 @@
+.titulos{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px;
+	padding-top: 250px;
+	padding-bottom: 50px;
+	width: 100%;
+	cursor: default;
+	color: #FFF;
+	background-image: url("../img/fondo_official.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.titulos .infTitle{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	width: 70%;
+}
+
+.titulos .infTitle .titles{
+	width: 100%;
+}
+
+.titulos .infTitle .titles h2{
+	font-size: 70px;
+	letter-spacing: 4px;
+}
+
+.titulos .infTitle .titles h1{
+	width: 100%;
+	text-align: left;
+	font-size: 24px;
+	letter-spacing: 4px;
+}
+
+.titulos .infTitle .titleInf{
+	font-size: 18px;
+	margin-top: 30px;
+	width: 100%;
+}
+
+.titulos .infTitle .titleInf p{
+	text-align: justify;
+}
+
+.titulos .titleLogo{
+	width: 25%;
+}
+
+.titulos .titleLogo img{
+	width: 300px;
+}
+
+.acCompromise{
+	background-image: url("../img/comprMin2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 50px;
+	padding-top: 490px;
+}
+
+.regisInvit{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	background-color: #FFF;
+}
+
+.regisInvit .img{
+	width: 200px;
+}
+
+.regisInvit a{
+	width: 400px;
+}
+
+.regisInvit p{
+	width: 35%;
+	padding: 10px;
+	text-align: center;
+}
+
+.acCompromise div{
+	text-align: center;
+	align-self: flex-end;
+}
+
+.acCompromise div h4{
+	letter-spacing: 2px;
+	font-size: 30px;
+	margin-bottom: 60px;
+}
+
+.acCompromise div span{
+	letter-spacing: 2px;
+	font-size: 40px;
+	padding-top: 10px;
+	border-top: 4px solid #28abb9;
+	margin: 0 40px;
+	cursor: default;
+}
+
+
+footer{
+	display: flex;
+	justify-content: center;
+	background-color: #28abb9;
+	padding: 30px;
+}

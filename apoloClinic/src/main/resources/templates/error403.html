@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.springframework.org/extras/spring-security">
+<head>
+	<meta charset="utf-8">
+	<head th:include="plantillas/multiTemplate :: head">
+	</head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/error403.css}">
+</head>
+<body>
+	<div style="background-color: #150485;">
+		<header th:replace="plantillas/multiTemplate :: hrz-header">
+		</header>
+	</div>
+	<header th:replace="plantillas/multiTemplate :: lateral-menu">
+	</header>
+	<div class="content">
+		<div class="wrapContent">
+			<div class="error403">
+				<img src="img/error403.png">
+				<h4>Error 403</h4>
+				<h5>¡Lo sentimos!</h5>
+				<h6>No tienes los privilegios necesarios para poder acceder a esta página.</h6>
+				<a href="/">Regresar al Inicio</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

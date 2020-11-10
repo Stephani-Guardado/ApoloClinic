@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.springframework.org/extras/spring-security">
+<head>
+	<meta charset="utf-8">
+	<head th:include="plantillas/multiTemplate :: head">
+	</head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/crud&popup.css}">
+</head>
+<body>
+	<div style="background-color: #ea5455;">
+		<header th:replace="plantillas/multiTemplate :: hrz-header">
+		</header>
+	</div>
+	<header th:replace="plantillas/multiTemplate :: lateral-menu">
+	</header>
+	<div class="content">
+		<div class="wrapContent">
+			<h3>Administración de Doctores.</h3>
+			<div class="crudDoc">
+				<div class="opciones">
+					<ul class="opcionesUl">
+						<li>
+							<a href="">Opción A</a>
+						</li>
+						<li>
+							<a href="">Opción B</a>
+						</li>
+						<li>
+							<a href="">Opción C</a>
+						</li>
+						<li>
+							<a href="">Opción D</a>
+						</li>
+						<li>
+							<a href="">Opción E</a>
+						</li>
+						<li>
+							<a href="">Opción F</a>
+						</li>
+						<li>
+							<a href="">Opción G</a>
+						</li>
+					</ul>
+				</div>
+				<div class="crud">
+					<div class="add">
+						<span class="btn btnAdd" id="btnOpenPopUp"><img src="img/mas.png">Agregar nuevo</span>
+					</div>
+					<div class="lista">
+						<table>
+							<thead>
+								<tr>
+									<th>Opciones</th>
+									<th>Id</th>
+									<th>Cédula</th>
+									<th>Nombre</th>
+									<th>Especialidad</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>a, b, c</td>
+									<td>0</td>
+									<td>12345</td>
+									<td>ASDF, ASDF</td>
+									<td>Asdfghj</td>
+								</tr>
+								<tr>
+									<td>a, b, c</td>
+									<td>0</td>
+									<td>12345</td>
+									<td>ASDF, ASDF</td>
+									<td>Asdfghj</td>
+								</tr>
+								<tr>
+									<td>a, b, c</td>
+									<td>0</td>
+									<td>12345</td>
+									<td>ASDF, ASDF</td>
+									<td>Asdfghj</td>
+								</tr>
+								<tr>
+									<td>a, b, c</td>
+									<td>0</td>
+									<td>12345</td>
+									<td>ASDF, ASDF</td>
+									<td>Asdfghj</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="overlay " id="overlay">
+		<div class="popUp " id="popUp">
+			<div class="encabezado">
+				<span class="btnClosePopUp"id="btnClosePopUp" ><i class="fas fa-times"></i></span>
+				<h4>Opciones de Registro</h4>
+			</div>
+			<form class="userFrm" th:action="@{/save-doctor}" method="post" th:include="plantillas/multiTemplate :: form-save-user">
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/windpopUp.js"></script>
+</body>
+</html>

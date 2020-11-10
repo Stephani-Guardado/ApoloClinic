@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.springframework.org/extras/spring-security">
+<head th:replace="plantillas/multiTemplate :: head">
+</head>
+<body>
+	<div style="background-color: #51adcf;">
+		<header th:replace="plantillas/multiTemplate :: hrz-header">
+		</header>
+	</div>
+	<header th:replace="plantillas/multiTemplate :: lateral-menu">
+	</header>
+
+	<div class="content">
+		<div class="wrapContent">
+			<h3>Bienvenido <span sec:authentication="name"></span></h3>
+		</div>
+	</div>
+</body>
+</html>

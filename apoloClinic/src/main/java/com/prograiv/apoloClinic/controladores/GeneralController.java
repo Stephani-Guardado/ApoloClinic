@@ -1,5 +1,6 @@
 package com.prograiv.apoloClinic.controladores;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,6 +13,9 @@ public class GeneralController {
 	
 	@Autowired
 	private UsuarioRepo ur;
+	
+	@Autowired
+	BCryptPasswordEncoder passEncod;
 	
 	@GetMapping("/")
 	public String index() {
@@ -61,18 +65,24 @@ public class GeneralController {
 	
 	@PostMapping("/save-paciente")
 	public String savePaciente(@ModelAttribute Usuario u) {
+		String passEncrypt = passEncod.encode(u.getPassw());
+		u.setPassw(passEncrypt);
 		ur.save(u);
 		return "login";
 	}
 	
 	@PostMapping("/save-doctor")
 	public String saveDoc(@ModelAttribute Usuario u) {
+		String passEncrypt = passEncod.encode(u.getPassw());
+		u.setPassw(passEncrypt);
 		ur.save(u);
 		return "admDocs";
 	}
 	
 	@PostMapping("/save-nurse")
 	public String saveNurse(@ModelAttribute Usuario u) {
+		String passEncrypt = passEncod.encode(u.getPassw());
+		u.setPassw(passEncrypt);
 		ur.save(u);
 		return "admNurses";
 	}
