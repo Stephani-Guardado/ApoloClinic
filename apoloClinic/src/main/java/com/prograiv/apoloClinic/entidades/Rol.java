@@ -15,7 +15,7 @@ public class Rol {
 	@Column(name="idRol")
 	private int idRol;
 	
-	@Column(name="rol")
+	@Column(name="rol", length=30)
 	private String rol;
 
 	public int getIdRol() {

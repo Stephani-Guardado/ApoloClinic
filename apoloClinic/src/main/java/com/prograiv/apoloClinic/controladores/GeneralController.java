@@ -73,16 +73,20 @@ public class GeneralController {
 	
 	@PostMapping("/save-doctor")
 	public String saveDoc(@ModelAttribute Usuario u) {
+		String cedulaMdc = "MDC-";
 		String passEncrypt = passEncod.encode(u.getPassw());
 		u.setPassw(passEncrypt);
+		u.setCedula(cedulaMdc.concat(u.getCedula()));
 		ur.save(u);
 		return "admDocs";
 	}
 	
 	@PostMapping("/save-nurse")
 	public String saveNurse(@ModelAttribute Usuario u) {
+		String cedulaMdc = "MDC-";
 		String passEncrypt = passEncod.encode(u.getPassw());
 		u.setPassw(passEncrypt);
+		u.setCedula(cedulaMdc.concat(u.getCedula()));
 		ur.save(u);
 		return "admNurses";
 	}
