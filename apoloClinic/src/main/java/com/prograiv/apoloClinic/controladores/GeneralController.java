@@ -2,10 +2,17 @@ package com.prograiv.apoloClinic.controladores;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.prograiv.apoloClinic.entidades.Laboratorio;
+import com.prograiv.apoloClinic.entidades.Medicamento;
 import com.prograiv.apoloClinic.entidades.Usuario;
+import com.prograiv.apoloClinic.repositorios.FarmaciaRepo;
+import com.prograiv.apoloClinic.repositorios.LaboratorioRepo;
+import com.prograiv.apoloClinic.repositorios.MedicamentoRepo;
 import com.prograiv.apoloClinic.repositorios.UsuarioRepo;
 
 @Controller
@@ -15,12 +22,17 @@ public class GeneralController {
 	private UsuarioRepo ur;
 	
 	@Autowired
+	private MedicamentoRepo mr;
+	
+	@Autowired
+	private LaboratorioRepo lr;
+	
+	@Autowired
 	BCryptPasswordEncoder passEncod;
 	
 	@GetMapping("/")
 	public String index() {
 		return "index";
-		
 	}
 	
 	@GetMapping("/admin")
@@ -56,6 +68,29 @@ public class GeneralController {
 	@GetMapping("/crud-nurses")
 	public String adminNurse() {
 		return "admNurses";
+	}
+
+	@GetMapping("/crud-farm")
+	public String adminFarm(Model m) {
+		m.addAttribute("invMedicamentos", mr.findAll());
+		m.addAttribute("listaLabs", lr.findAll());
+		return "admFarmacia";
+	}
+	
+	@PostMapping("/save-farm")
+	public String saveFarm(@ModelAttribute Medicamento md, Model m) {
+		mr.save(md);
+		m.addAttribute("invMedicamentos", mr.findAll());
+		m.addAttribute("listaLabs", lr.findAll());
+		return "admFarmacia";
+	}
+	
+	@PostMapping("/save-lab")
+	public String saveLab(@ModelAttribute Laboratorio lb, Model m) {
+		lr.save(lb);
+		m.addAttribute("invMedicamentos", mr.findAll());
+		m.addAttribute("listaLabs", lr.findAll());
+		return "admFarmacia";
 	}
 	
 	@GetMapping("/error_403")

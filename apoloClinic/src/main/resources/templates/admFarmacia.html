@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.springframework.org/extras/spring-security">
+<head>
+	<meta charset="utf-8">
+	<head th:include="plantillas/multiTemplate :: head">
+	</head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/admFarmaciaStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/crud&popup.css}">
+</head>
+<body>
+	<div style="background-color: #ea5455;">
+		<header th:replace="plantillas/multiTemplate :: hrz-header">
+		</header>
+	</div>
+	<header th:replace="plantillas/multiTemplate :: lateral-menu">
+	</header>
+	<div class="content">
+		<div class="invContent">
+			<div class="contenedor inv">
+				<div class="lista Mdcmnts">
+					<table>
+						<thead>
+							<tr>
+<!--								<th>Opciones</th> -->
+								<th>Id</th>
+								<th>Nombre</th>
+								<th>Descripcion</th>
+								<th>Fecha registro</th>
+								<th>Fecha vencimiento</th>
+<!-- 								<th>Laboratorio</th> -->
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="medicamento, index : ${invMedicamentos}">
+								<td th:text="${medicamento.idMedicamento}"></td>
+								<td th:text="${medicamento.nombre}"></td>
+								<td th:text="${medicamento.descripcion}"></td>
+								<td th:text="${medicamento.fecha_registro}"></td>
+								<td th:text="${medicamento.fecha_vence}"></td>
+<!-- 								<td>asdf123</td> -->
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="crudsLM">
+					<span class="linknt btn btnAdd" id="btnOpenPopUp"><img src="img/mas.png">Agregar Nuevo</span>
+				</div>
+			</div>
+			<div class="contenedor labs">
+				<div class="lista Labs">
+					<table>
+						<thead>
+							<tr>
+								<th>Opciones</th>
+								<th>Id</th>
+								<th>Nombre</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="laboratorio, index : ${listaLabs}">
+								<td></td>
+								<td th:text="${laboratorio.idLaboratorio}"></td>
+								<td th:text="${laboratorio.nombre}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="crudsLM">
+					<span class="linknt btnAddLM" id="btnOpenPopUp2"><img src="img/mas.png">Registrar Nuevo</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="overlay" id="overlay">
+		<div class="popUpCrudFL" id="popUp">
+			<span class="btnClosePopUp"id="btnClosePopUp" ><i class="fas fa-times"></i></span>
+			<form action="/save-farm" method="post" class="frmCrudFarm">
+				<label>ID:</label>
+				<input type="text" class="control" name="idMedicamento">
+				<label>Nombre del Medicamento:</label>
+				<input type="text" class="control" name="nombre">
+				<label>Descripcion del Medicamento:</label>
+				<input type="text" class="control" name="descripcion">
+				<label>Fecha de Registro:</label>
+				<input type="text" class="control" name="fecha_registro">
+				<label>Fecha de Vencimiento:</label>
+				<input type="text" class="control" name="fecha_vence">
+				<label>Laboratorio:</label>
+				<select name="laboratorio">
+					<option th:each="laboratorio, index : ${listaLabs}" th:value="${laboratorio.idLaboratorio}" th:text="${laboratorio.nombre}"/>
+				</select>
+				<div class="opcionesCF">
+					<input type="button" class="btn btnReg cancel" id="btnCancel" value="Cancelar">
+					<input type="submit" class="btn btnReg" value="GUARDAR">
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="overlay" id="overlay2">
+		<div class="popUpCrudFL" id="popUp2">
+			<span class="btnClosePopUp"id="btnClosePopUp2" ><i class="fas fa-times"></i></span>
+			<form action="/save-lab" method="post" class="frmCrudFarm">
+				<label>ID:</label>
+				<input type="text" class="control" name="idLaboratorio">
+				<label>Nombre del Laboratorio:</label>
+				<input type="text" class="control" name="nombre">
+				<div class="opcionesCF">
+					<input type="button" class="btn btnReg cancel" id="btnCancel2" value="Cancelar">
+					<input type="submit" class="btn btnReg" value="Aceptar">
+				</div>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/windpopUp.js"></script>
+</body>
+</html>

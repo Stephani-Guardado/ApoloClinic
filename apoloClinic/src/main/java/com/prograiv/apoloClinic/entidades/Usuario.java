@@ -57,7 +57,7 @@ public class Usuario {
 	@Column(name="username", length=100)
 	private String username;
 	
-	@Column(name="passw", length=50)
+	@Column(name="passw")
 	private String passw;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

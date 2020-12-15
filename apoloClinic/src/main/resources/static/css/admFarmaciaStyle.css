@@ -1,0 +1,136 @@
+.invContent{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	border-radius: 10px;
+	background-color: #838383;
+	margin-top: 40px;
+}
+
+.invContent .contenedor{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-self: flex-start;
+	padding: 10px;
+}
+
+.inv{
+	width: 70%;
+}
+
+.labs{
+	width: 30%;
+}
+
+.lista{
+	width: 100%;
+	height: 500px;
+	overflow-y: auto;
+	margin-bottom: 10px;
+	padding: 5px;
+/*	border: 2px solid #000;*/
+	border: 2px solid #000;
+}
+
+.crudsLM{
+	width: 100%;
+	padding: 10px;
+	margin: 0 10px;
+	color: #FFF;
+	background-color: #bbbbbb;
+/*	background-color: #6e6d6d;*/
+	border-radius: 10px;
+}
+
+.btnAddLM{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid gray;
+	background-color: gray;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 8px;
+	border-radius: 10px;
+	margin: 3px;
+	color: #FFF;
+	width: 98%;
+	font-size: 14px;
+	background-color: #1f3c88;
+	border: 2px solid #1f3c88;
+	transition: .3s ease all;
+}
+
+.btnAddLM:hover{
+	background-color: #070d59;
+	border: 2px solid #FFF;
+}
+
+.btnAddLM img{
+	width: 30px;
+	margin-right: 10px;
+}
+
+
+/* POP UP */
+
+
+.popUpCrudFL{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 40%;
+	height: 90vh;
+	padding: 20px;
+	background-color: #f8f8f8;
+	opacity: 0;
+	transition: .3s ease all;
+	transform: scale(0.7);
+	overflow-y: auto;
+}
+
+.popUpCrudFL.Active{
+	opacity: 1;
+	transform: scale(1);
+}
+
+.btnClosePopUp{
+	display: flex;
+	align-self: flex-end;
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 16px;
+	text-align: right;
+	color: #bbbbbb;
+	transition: .3s ease all;
+	cursor: pointer;
+}
+
+.btnClosePopUp:hover{
+	color: rgba(0, 0, 0, .9);
+}
+
+.popUpCrudFL .frmCrudFarm{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+}
+
+.opcionesCF{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	margin-top: 50px;
+}
+
+/* POP UP */
