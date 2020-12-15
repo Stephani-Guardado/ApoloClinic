@@ -1,0 +1,97 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.contenedor {
+	width: auto;
+	height: auto;
+}
+
+.receta {
+	background-color: rgb(255, 255, 255);
+	width: auto;
+	height: 695px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tittle {
+	font-size: 50px;
+	text-align: center;
+	font-weight: bold;
+	color: blanchedalmond;
+}
+
+.tittle img {
+	width: 32px;
+	height: 32px;
+}
+
+.receta .userFrm {
+	width: 350px;
+	height: 450px;
+	background-color: black;
+	opacity: 0.75;
+	border: 2px solid #ffffff;
+	border-radius: 10px 10px;
+}
+
+.userFrm label {
+	display: flex;
+	justify-content: left;
+	margin-left: 10px;
+	color: blanchedalmond;
+	padding: 10px 10px;
+}
+
+.userFrm input[type='text'] {
+	width: 280px;
+	height: 25px;
+	color: #fff;
+	margin-left: 10px;
+	border: none;
+	outline: 0px;
+	border-bottom: 1px solid #fff;
+	background-color: transparent;
+}
+
+.botones .btnReg {
+	margin-top: 20px;
+	width: 130px;
+	height: 50px;
+	margin-left: 15px;
+	border-radius: 10px;
+	outline: 0;
+	border: 1px solid #fff;
+	background-color: rgb(4, 228, 97);
+	color: #fff;
+	cursor: pointer;
+}
+
+.botones .btnReg:hover {
+	background-color: rgb(6, 175, 77);
+	transition: all 0.09s ease-in;
+	border: 3px solid #fff;
+}
+
+.botones .btnReg-cancel {
+	width: 130px;
+	height: 50px;
+	margin-left: 20px;
+	border-radius: 10px;
+	outline: 0;
+	border: 1px solid #fff;
+	background-color: rgb(231, 14, 6);
+	color: #fff;
+	cursor: pointer;
+}
+
+.botones .btnReg-cancel:hover {
+	background-color: rgb(175, 6, 6);
+	transition: all 0.09s ease-in;
+	border: 3px solid #fff;
+}
