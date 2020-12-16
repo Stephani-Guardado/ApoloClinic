@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html
+	lang="en"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.springframework.org/extras/spring-security"
+>
+	<head th:replace="plantillas/multiTemplate :: head">
+		<title>Receta</title>
+		<link rel="stylesheet" type="text/css" href="/css/Receta.css" />
+	</head>
+	<body>
+		<div class="contenedor">
+			<div style="background-color: #51adcf">
+				<header th:replace="plantillas/multiTemplate :: hrz-header"></header>
+			</div>
+			<header th:replace="plantillas/multiTemplate :: lateral-menu"></header>
+			<div class="receta">
+				<form
+					class="userFrm"
+					th:action="@{/save-recetadetalle}"
+					method="post"
+					th:fragment="form-save-index"
+				>
+					<div class="controlesFrm">
+						<div class="grupo dataPersonal">
+							<h1 class="tittle">
+								<img src="/img/receta.svg" alt="" /> Receta
+							</h1>
+							<br />
+							<label>idReceta: </label>
+							<input
+								type="text"
+								class="control"
+								name="idreceta"
+								placeholder="control"
+							/>
+							<br />
+							<label>cantidad: </label>
+							<input
+								type="text"
+								class="control"
+								name="cantidad"
+								placeholder="cantidad"
+							/>
+							<br />
+							<label>estado: </label>
+							<input
+								type="text"
+								class="control"
+								name="estado"
+								placeholder="estado"
+							/>
+							<br />
+							<label>"idMedicamento": </label>
+							<input type="text" class="control" name="idMedicamento"
+							placeholder=""idMedicamento"">
+							<br />
+						</div>
+						<div class="botones">
+							<input type="submit" class="btnReg" value="Confirmar Registro" />
+							<input
+								type="reset"
+								class="btnReg-cancel"
+								id="btnCancel"
+								value="Cancelar"
+							/>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: rgb(255, 255, 255);
+	font-size: 25px;
+	margin-left: 5px;
+}
+
+.container {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.showtable .tittle .fas {
+	font-size: 55px;
+}
+
+.showtable .tittle {
+	font-family: sans-serif;
+	font-size: 18px;
+	text-align: center;
+	padding: 10px 10px;
+}
+
+.showtable .control {
+	height: 35px;
+	width: 550px;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	outline: 0;
+	border: 1px solid rgb(3, 3, 3);
+	margin-left: 120px;
+}
+
+.showtable .btnReg {
+	margin-left: -10px;
+	background-color: rgb(102, 211, 187);
+	height: 35px;
+	width: 80px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border: 2px solid rgb(119, 118, 118);
+	cursor: pointer;
+}
+
+.showtable .btnReg:hover {
+	background-color: rgb(60, 151, 147);
+	transition: 0.3s;
+}
+
+.table {
+	overflow: scroll;
+	height: 250px;
+}
+.content-table {
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	height: 200px;
+	min-width: 400px;
+	border-radius: 5px 5px 0 0;
+	overflow: scroll;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	font-family: sans-serif;
+}

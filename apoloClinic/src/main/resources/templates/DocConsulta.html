@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.springframework.org/extras/spring-security">
+<head th:replace="plantillas/multiTemplate :: head">
+<title>Consulta</title>
+<link rel="stylesheet" type="text/css" href="/css/ConsultaStyle.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+<body>
+	<div style="background-color: #51adcf;">
+		<header th:replace="plantillas/multiTemplate :: hrz-header">
+		</header>
+	</div>
+	<header th:replace="plantillas/multiTemplate :: lateral-menu">
+	</header>
+		
+
+
+
+<a href="/"><i class="fa fa-home"></i> Atras</a>
+
+
+<div class="container">
+                    <div class="showtable">
+                        <form action="Buscador">
+                           <h2 class="tittle"> <i class="fas fa-search"></i> Buscador</h2>
+                        <input type="text" class="control" name="Buscadorconsu" placeholder="Todavia no funciono">
+                        <input type="submit"class="btnReg" value="Buscador">
+							</form>
+							<div class="table">
+							<table class="content-table table-fixed">
+								<caption>Tabla de algo no se que pero algo</caption>
+								<thead>
+							<tr>
+								<th>Cédula-Doctor</th>
+								<th>Expediente</th>
+								<th>Id-Cita</th>
+								<th>Sintomas</th>
+								<th>Diagnóstico</th>
+								<th>Observaciones</th>
+								<th>Fecha</th>
+								<th>Id-Consulta</th>
+							</tr>
+								</thead>
+								<tbody>
+									
+								</tbody>
+									
+							</table>
+						</div>
+                    </div>
+					
+					<div class="forms">
+					
+					<form class="userFrm" th:action="@{/save-consulta}" method="post" th:fragment="form-save-Receta">
+		<div class="controlesFrm">
+			<div class="grupodataConsulta">
+				<h1 class="tittle"><img src="/img/2921222.svg" alt=""> Consulta </h1>
+				<br>
+				<label>CedulaDoctor: </label>
+				<input type="text" class="control" name="cedula" placeholder="Escriba aqui su Cedula">
+				<br>
+				<label>Expediente: </label>
+				<input type="text" class="control" name="idUsuario" placeholder="Expediente del paciente">
+				<br>
+				<label>idCita: </label>
+				<input type="text" class="control" name="idCita" placeholder="idCita">
+				<br>
+				<label>sintomas: </label>
+				<input type="text" class="control" name="sintomas" placeholder="sintomas">
+				<br>
+				<label>diagnostico: </label>
+				<input type="text" class="control" name="diagnostico" placeholder="diagnostico">
+				<br>
+				<label>observaciones: </label>
+				<input type="text" class="control" name="observaciones" placeholder="observaciones">
+				<br>
+				
+			</div>
+			<form class="userFrm1" th:action="@{/save-receta}" method="post">
+				<div class="controlesFrm">
+				<div class="controlesFrm"> 
+					<div class="grupodataConsulta">
+						<label>fecha </label>
+						<input type="date" class="control" name="fecha" placeholder="fecha">
+						<br>
+						<label>id_consulta: </label>
+						<input type="text" class="control" name="id_consulta" placeholder="id_consulta">
+						<br>
+					</div>
+					</div>
+				</form>
+			<div class="botones">
+					<input type="submit"class="btnReg" value="Confirmar Registro">
+					<input type="reset"class="btnReg-cancel" id="btnCancel" value="Cancelar">
+					</div>
+					</div>
+	</form>
+				
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

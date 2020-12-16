@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.springframework.org/extras/spring-security">
+
+<head th:replace="plantillas/multiTemplate :: head">
+</head>
+<body>
+
+<div style="background-color: #ad62aa;">
+		<header th:replace="plantillas/multiTemplate :: hrz-header">
+		</header>
+	</div>
+	<header th:replace="plantillas/multiTemplate :: lateral-menu">
+	</header>
+
+<div class="container mt-5">
+<div class="row justify-content-center">
+<div class="coL-md-8">
+
+<h4>Buscar expedientes</h4>
+
+<form th:action="@{/nombre}" th:object="${visitasPa}" method="get">
+
+<input type="text" th:field="*{nombres}" class="form-control coL-md-4">
+<button type="submit" class="btn btn-success">Buscar</button>
+</form>
+
+<table class="table">
+<thead> 
+<tr> 
+<th>idUsuario</th>
+<th>Nombre</th>
+<th>Apellido</th>
+<th>Telefono</th>
+<th>Sexo</th>
+<th>Sintomas</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr th:each="data : ${usuaPorNombre}"> 
+<th th:text="${data.idUsuario}"></th>
+<th th:text="${data.nombres}"></th>
+<th th:text="${data.apellidos}"></th>
+<th th:text="${data.telefono}"></th>
+<th th:text="${data.sexo}"></th>
+
+
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
